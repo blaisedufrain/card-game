@@ -24,7 +24,7 @@ class DeckTest extends TestCase
             array_push($cards, $this->createMock(Card::class));
         }
         $this->deck = new PlayingCardDeck($cards);
-        $this->unoDeck = DeckFactory::make('Uno');
+        $this->unoDeck = DeckFactory::make('Pinochle');
     }
 
     /** @test */
@@ -32,7 +32,7 @@ class DeckTest extends TestCase
     {
         $this->assertInstanceOf(DeckInterface::class, $this->deck);
         $this->assertCount(52, $this->deck->getAllCards());
-        $this->assertCount(192, $this->unoDeck->getAllCards());
+        $this->assertCount(48, $this->unoDeck->getAllCards());
     }
 
     /** @test */
