@@ -8,22 +8,21 @@ class Card
      * @var string
      */
     public $suit;
-    /**
-     * @var int
-     */
-    public $value;
+
     /**
      * @var null|string
      */
     public $name;
 
+    public $value;
+
     /**
      * Card constructor.
      * @param string $suit
-     * @param int $value
+     * @param $value
      * @param string|null $name
      */
-    public function __construct(string $suit, int $value, string $name = null)
+    public function __construct(string $suit, $value, string $name = null)
     {
         $this->suit = $suit;
         $this->value = $value;

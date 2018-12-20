@@ -2,15 +2,15 @@
 
 namespace Core\CardDecks;
 
-class PlayingCardDeck extends Deck
+class UnoDeck extends Deck
 {
     public static function getSuits(): array
     {
         return [
-            'clubs',
-            'spades',
-            'hearts',
-            'diamonds',
+            'blue',
+            'green',
+            'red',
+            'yellow',
         ];
     }
 
@@ -26,10 +26,17 @@ class PlayingCardDeck extends Deck
             'seven' => '7',
             'eight' => '8',
             'nine' => '9',
-            'ten' => '10',
-            'jack' => '11',
-            'queen' => '12',
-            'king' => '13',
+            'skip' => 'S',
+            'revers' => 'R',
+            'wildcard' => 'W',
         ];
+    }
+
+    /**
+     * @return int
+     */
+    public static function repetitionsPerSuit(): int
+    {
+        return 4;
     }
 }

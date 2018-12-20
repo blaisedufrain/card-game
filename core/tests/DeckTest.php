@@ -1,5 +1,6 @@
 <?php
 
+use Core\Card;
 use Core\DeckFactory;
 use PHPUnit\Framework\TestCase;
 use Core\Contracts\DeckInterface;
@@ -11,14 +12,19 @@ class DeckTest extends TestCase
      * @var DeckInterface
      */
     protected $deck;
+    /**
+     * @var DeckInterface
+     */
+    protected $unoDeck;
 
     public function setUp()
     {
         $cards = [];
         for ($i= 1; $i <=52; $i++) {
-            array_push($cards, $this->createMock(\Core\Card::class));
+            array_push($cards, $this->createMock(Card::class));
         }
         $this->deck = new PlayingCardDeck($cards);
+        $this->unoDeck = DeckFactory::make('Uno');
     }
 
     /** @test */
@@ -26,6 +32,7 @@ class DeckTest extends TestCase
     {
         $this->assertInstanceOf(DeckInterface::class, $this->deck);
         $this->assertCount(52, $this->deck->getAllCards());
+        $this->assertCount(192, $this->unoDeck->getAllCards());
     }
 
     /** @test */
@@ -39,7 +46,7 @@ class DeckTest extends TestCase
     public function cards_should_be_replaceable()
     {
         $this->assertCount(52, $this->deck->getAllCards());
-        $this->deck->setCards([$this->createMock(\Core\Card::class)]);
+        $this->deck->setCards([$this->createMock(Card::class)]);
         $this->assertCount(1, $this->deck->getAllCards());
     }
 }

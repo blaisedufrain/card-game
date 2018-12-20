@@ -20,7 +20,9 @@ class DeckFactory
         $cards = [];
         foreach ($class::getSuits() as $suit) {
             foreach ($class::getValues() as $name => $value) {
-                array_push($cards, new Card($suit, $value, (is_string($name) ? $name : null)));
+                for ($i = 0; $i < $class::repetitionsPerSuit(); $i++) {
+                    array_push($cards, new Card($suit, $value, (is_string($name) ? $name : null)));
+                }
             }
         }
 

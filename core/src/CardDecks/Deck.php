@@ -9,7 +9,7 @@ abstract class Deck implements DeckInterface
     /**
      * @var array
      */
-    public $cards;
+    protected $cards;
 
     /**
      * Deck constructor.
@@ -18,6 +18,11 @@ abstract class Deck implements DeckInterface
     public function __construct(array $cards = [])
     {
         $this->cards = $cards;
+    }
+
+    public static function repetitionsPerSuit(): int
+    {
+        return 1;
     }
 
     /**
