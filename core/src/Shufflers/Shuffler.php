@@ -4,7 +4,7 @@ namespace Core\Shufflers;
 
 use Core\Contracts\ShufflerContract;
 
-class FisherYatesShuffler implements ShufflerContract
+class Shuffler implements ShufflerContract
 {
 
     /**

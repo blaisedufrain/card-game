@@ -2,12 +2,12 @@
 
 use Core\Card;
 use PHPUnit\Framework\TestCase;
-use Core\Shufflers\FisherYatesShuffler;
+use Core\Shufflers\Shuffler;
 use Core\CardDecks\PlayingCardDeck;
 use Core\Contracts\ShufflerContract;
 use Core\Contracts\DeckContract;
 
-class FisherYatesShufflerTest extends TestCase
+class ShufflerTest extends TestCase
 {
     protected $number;
     protected $cards;
@@ -22,7 +22,7 @@ class FisherYatesShufflerTest extends TestCase
 
     public function setUp()
     {
-        $this->shuffler = new FisherYatesShuffler();
+        $this->shuffler = new Shuffler();
         $this->cards = [];
         $this->number = random_int(10, 25);
         for ($i = 1; $i <= $this->number; $i++) {
