@@ -20,7 +20,7 @@ class DeckTest extends TestCase
     public function setUp()
     {
         $cards = [];
-        for ($i= 1; $i <=52; $i++) {
+        for ($i = 1; $i <= 52; $i++) {
             array_push($cards, $this->createMock(Card::class));
         }
         $this->deck = new PlayingCardDeck($cards);

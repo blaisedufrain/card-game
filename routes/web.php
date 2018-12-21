@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+$deck = \Core\DeckFactory::make('PlayingCard');
+$shuffler = new \Core\Shufflers\Shuffler();
+
+$dealer = new \Core\Dealer($shuffler, $deck);
+$dealer->shuffle();
+//dd($dealer, collect($dealer->cards)->map(function ($card) {
+//    return $card->display();
+//}), $dealer->dealOneCard());

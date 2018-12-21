@@ -9,7 +9,13 @@ use Core\Contracts\DeckContract;
 
 class ShufflerTest extends TestCase
 {
+    /**
+     * @var int
+     */
     protected $number;
+    /**
+     * @var array
+     */
     protected $cards;
     /**
      * @var DeckContract
@@ -54,7 +60,7 @@ class ShufflerTest extends TestCase
     /** @test */
     public function it_should_be_different_each_time()
     {
-        //While there is a possibilility of getting an identical permutation it is unlikely.
+        //While there is a possibility of getting an identical permutation it is unlikely.
         $original = $cards = $this->deck->getCards();
         $this->shuffler->shuffle($cards);
         $cards2 = $cards;

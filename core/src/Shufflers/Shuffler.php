@@ -22,6 +22,5 @@ class Shuffler implements ShufflerContract
             $items[$random] = $items[$i];
             $items[$i] = $tmp;
         }
-
     }
 }

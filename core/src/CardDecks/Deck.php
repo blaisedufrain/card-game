@@ -13,6 +13,7 @@ abstract class Deck implements DeckContract
 
     /**
      * Deck constructor.
+     *
      * @param array $cards
      */
     public function __construct(array $cards = [])
