@@ -2,13 +2,13 @@
 
 namespace Core\Contracts;
 
-interface DeckInterface
+interface DeckContract
 {
     /**
      * Get all items in the deck.
      * @return array
      */
-    public function getAllCards(): array ;
+    public function getCards(): array;
 
     /**
      * Replace the cards in the deck.

@@ -2,7 +2,7 @@
 
 namespace Core;
 
-use Core\Contracts\DeckInterface;
+use Core\Contracts\DeckContract;
 
 class DeckFactory
 {

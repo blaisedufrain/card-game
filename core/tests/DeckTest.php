@@ -3,17 +3,17 @@
 use Core\Card;
 use Core\DeckFactory;
 use PHPUnit\Framework\TestCase;
-use Core\Contracts\DeckInterface;
+use Core\Contracts\DeckContract;
 use Core\CardDecks\PlayingCardDeck;
 
 class DeckTest extends TestCase
 {
     /**
-     * @var DeckInterface
+     * @var DeckContract
      */
     protected $deck;
     /**
-     * @var DeckInterface
+     * @var DeckContract
      */
     protected $unoDeck;
 
@@ -30,9 +30,9 @@ class DeckTest extends TestCase
     /** @test */
     public function it_should_get_all_cards()
     {
-        $this->assertInstanceOf(DeckInterface::class, $this->deck);
-        $this->assertCount(52, $this->deck->getAllCards());
-        $this->assertCount(48, $this->unoDeck->getAllCards());
+        $this->assertInstanceOf(DeckContract::class, $this->deck);
+        $this->assertCount(52, $this->deck->getCards());
+        $this->assertCount(48, $this->unoDeck->getCards());
     }
 
     /** @test */
@@ -45,8 +45,8 @@ class DeckTest extends TestCase
     /** @test */
     public function cards_should_be_replaceable()
     {
-        $this->assertCount(52, $this->deck->getAllCards());
+        $this->assertCount(52, $this->deck->getCards());
         $this->deck->setCards([$this->createMock(Card::class)]);
-        $this->assertCount(1, $this->deck->getAllCards());
+        $this->assertCount(1, $this->deck->getCards());
     }
 }

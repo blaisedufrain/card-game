@@ -2,9 +2,9 @@
 
 namespace Core\CardDecks;
 
-use Core\Contracts\DeckInterface;
+use Core\Contracts\DeckContract;
 
-abstract class Deck implements DeckInterface
+abstract class Deck implements DeckContract
 {
     /**
      * @var array
@@ -28,7 +28,7 @@ abstract class Deck implements DeckInterface
     /**
      * @return array
      */
-    public function getAllCards(): array
+    public function getCards(): array
     {
         return $this->cards;
     }
