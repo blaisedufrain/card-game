@@ -50,9 +50,13 @@ You can add your own deck in the .core/CardDecks/ directory.  Make sure to follo
 
 ### Tests
 
-Unit tests are located within the ./core/test/ directory. The suite can be run from the project root with the following command. 
+Unit tests are located within the ./core/tests/ directory. The suite can be run from the project root with the following command. 
 
 `./vendor/bin/phpunit`
+
+or if you are using docker
+
+`docker-compose exec app ./vendor/bin/phpunit` 
 
 
 
