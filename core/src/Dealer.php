@@ -3,10 +3,11 @@
 namespace Core;
 
 use Core\Contracts\DeckContract;
+use Core\Contracts\DealerContract;
 use Core\Contracts\ShufflerContract;
 use Core\Exceptions\NoCardsRemainingException;
 
-class Dealer
+class Dealer implements DealerContract
 {
     /**
      * @var ShufflerContract
@@ -32,7 +33,7 @@ class Dealer
     /**
      * @return void
      */
-    public function shuffle()
+    public function shuffle(): void
     {
         $this->shuffler->shuffle($this->cards);
     }
@@ -48,6 +49,15 @@ class Dealer
         }
 
         return array_shift($this->cards);
+    }
+
+
+    /**
+     * @param DeckContract $deckContract
+     */
+    public function swapDeck(DeckContract $deckContract): void
+    {
+        $this->cards = $deckContract->getCards();
     }
 
     /**

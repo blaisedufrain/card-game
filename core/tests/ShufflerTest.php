@@ -53,7 +53,15 @@ class ShufflerTest extends TestCase
     {
         $cards = $this->deck->getCards();
         $this->shuffler->shuffle($cards);
-        $this->assertCount($this->number, collect($this->cards)->unique());
+        $this->assertCount($this->number, collect($cards)->unique());
+        $dealt = [];
+        foreach ($cards as $card) {
+            if (array_has($dealt, get_class($card))) {
+                $this->assertTrue(false);
+            } else {
+                $dealt[] = get_class($card);
+            }
+        }
     }
 
 
@@ -63,9 +71,9 @@ class ShufflerTest extends TestCase
         //While there is a possibility of getting an identical permutation it is unlikely.
         $original = $cards = $this->deck->getCards();
         $this->shuffler->shuffle($cards);
+        $this->assertNotEquals($original, $cards);
         $cards2 = $cards;
         $this->shuffler->shuffle($cards);
-        $this->assertNotEquals($original, $cards);
         $this->assertNotEquals($cards2, $cards);
         $this->assertNotEquals($cards2, $original);
     }
