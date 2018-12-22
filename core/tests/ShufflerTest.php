@@ -53,15 +53,17 @@ class ShufflerTest extends TestCase
     {
         $cards = $this->deck->getCards();
         $this->shuffler->shuffle($cards);
-        $this->assertCount($this->number, collect($cards)->unique());
         $dealt = [];
         foreach ($cards as $card) {
             if (array_has($dealt, get_class($card))) {
+                // Fail the test
                 $this->assertTrue(false);
             } else {
                 $dealt[] = get_class($card);
             }
         }
+
+        $this->assertCount(count($cards), $dealt);
     }
 
 
