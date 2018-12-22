@@ -17,12 +17,12 @@ Clone the repository into your desired folder by calling `git clone git@github.c
 From within the project directory:
 
 Run `cp .env.example .env`
-
-Run `composer install`
  
 Run `php artisan key:generate`
 
 ##### Option 1: (Assuming that you have php 7.2 and composer installed on your machine)
+
+Run `composer install`
 
 Run `php artisan serve`
 
@@ -34,6 +34,8 @@ If you do not have php 7.2 installed you can use the docker option.  [Docker](ht
 
 Run `docker-compose up -d`  
 *If you have any port collisions, please adjust the ports as necessary in the docker-compose.yml in the project root.
+
+Run `docker-compose exec app composer install`
 
 Confirm the application is working by going to http://127.0.0.1:809
 
