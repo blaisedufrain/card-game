@@ -34,12 +34,6 @@ services:
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
-  redis:
-    image: redis:4.0-alpine
-    ports:
-      - 16379:6379
-    networks:
-    - app-network
 
 #Docker Networks
 networks:
