@@ -1,7 +1,7 @@
 # Card Game
 ###### by Blaise DuFrain
 
-#####A few comments for whoever is looking at this.  
+##### A few comments for whoever is looking at this.  
 
 The code for that handles cards, shuffling, dealing, etc. is contained within the core/ directory in the project root.
   
