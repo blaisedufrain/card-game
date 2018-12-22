@@ -12,17 +12,6 @@ I wanted to give you an actual interface to interact with the tool, so I created
 
 ### Deployment
 
-##### Option 1: (Assuming that you have php 7.2 and composer installed on your machine)
-
-Run `php artisan serve`
-
-This will start a webserver listening to port 8000. Confirm it is running by visiting http://127.0.0.1:8000
-
-##### Option 2:
-If you do not have php 7.2 installed you can use the docker option.
-
-I rely on [Docker](https://docs.docker.com/install/#supported-platforms) and [Docker Compose](https://docs.docker.com/compose/install/) to simplify the deployment for you.  Please make sure you have both of these installed.
-
 Clone the repository into your desired folder by calling `git clone git@github.com:blaisedufrain/card-game.git`
 
 From within the project directory:
@@ -32,6 +21,16 @@ Run `cp .env.example .env`
 Run `composer install`
  
 Run `php artisan key:generate`
+
+##### Option 1: (Assuming that you have php 7.2 and composer installed on your machine)
+
+Run `php artisan serve`
+
+This will start a webserver listening to port 8000. Confirm it is running by visiting http://127.0.0.1:8000
+
+##### Option 2:
+
+If you do not have php 7.2 installed you can use the docker option.  [Docker](https://docs.docker.com/install/#supported-platforms) and [Docker Compose](https://docs.docker.com/compose/install/) must both be installed.
 
 Run `docker-compose up -d`  
 *If you have any port collisions, please adjust the ports as necessary in the docker-compose.yml in the project root.
