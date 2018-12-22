@@ -4,11 +4,12 @@
 ##### A few comments for whoever is looking at this.  
 
 The code for that handles cards, shuffling, dealing, etc. is contained within the core/ directory in the project root.
+The Dealer.php file contains the two methods you have requested in the original assignment. 
   
 I wanted to keep this code separate from any framework as it should really work in any php project, not just this one.  
-In reality I likely would have created a separate composer package for this and required it as a dependency for the project, but I left them together to keep you from having to jump between repos.
+I would have created a separate package for this and required it as a dependency for the project, but I left them together to keep you from having to jump between repos.
 
-I wanted to give you an actual interface to interact with the tool, so I created a pretty straightforward app to show it in use. I use [Laravel](https://laravel.com/ "Laravel Homepage") and [Vue.js](https://vuejs.org/) for this particular implementation. 
+I wanted to give you an actual interface to interact with the tool, so I created a pretty straightforward app using [Laravel](https://laravel.com/ "Laravel Homepage") and [Vue.js](https://vuejs.org/). 
 
 ### Deployment
 
