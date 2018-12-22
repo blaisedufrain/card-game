@@ -4,7 +4,7 @@ namespace Core\Shufflers;
 
 use Core\Contracts\ShufflerContract;
 
-class Shuffler implements ShufflerContract
+class DefaultShuffler implements ShufflerContract
 {
 
     /**

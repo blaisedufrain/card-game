@@ -2,7 +2,7 @@
 
 use Core\Card;
 use PHPUnit\Framework\TestCase;
-use Core\Shufflers\Shuffler;
+use Core\Shufflers\DefaultShuffler;
 use Core\CardDecks\PlayingCardDeck;
 use Core\Contracts\ShufflerContract;
 use Core\Contracts\DeckContract;
@@ -28,7 +28,7 @@ class ShufflerTest extends TestCase
 
     public function setUp()
     {
-        $this->shuffler = new Shuffler();
+        $this->shuffler = new DefaultShuffler();
         $this->cards = [];
         $this->number = random_int(10, 25);
         for ($i = 1; $i <= $this->number; $i++) {

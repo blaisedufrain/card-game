@@ -44,10 +44,18 @@ Confirm the application is working by going to http://127.0.0.1:809
 
 ### Extensibility
 
+##### Card Decks
 If you don't like standard playing cards, you can add a variable to your .env file to change the deck used by the game.
+
 CARD_DECK=Pinochle
 
-You can add your own deck in the .core/CardDecks/ directory.  Make sure to follow the naming convention.  
+You can add your own deck in the .core/CardDecks/ directory.  Make sure to follow the naming convention.
+
+##### Shuffler Algorithms
+Additional shuffling algorithms can be added to the Shufflers directory.  
+I implemented a "CutTheDeck" shuffler solely for demonstration.  To use this or another shuffler, add a variable to your .env as follows:
+
+CARD_SHUFFLER=CutTheDeck
 
 ### Tests
 

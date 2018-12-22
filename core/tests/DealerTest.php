@@ -3,7 +3,7 @@
 use Core\Card;
 use Core\Dealer;
 use Core\CardDecks\Deck;
-use Core\Shufflers\Shuffler;
+use Core\Shufflers\DefaultShuffler;
 use PHPUnit\Framework\TestCase;
 use Core\Exceptions\NoCardsRemainingException;
 
@@ -35,7 +35,7 @@ class DealerTest extends TestCase
         }
         $deck = $this->createMock(Deck::class);
         $deck->method('getCards')->willReturn($this->cards);
-        $shuffler = $this->createMock(Shuffler::class);
+        $shuffler = $this->createMock(DefaultShuffler::class);
         $shuffler->method('shuffle')->willReturnCallback(function () {
             return shuffle($this->cards);
         });
