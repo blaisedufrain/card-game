@@ -16,7 +16,7 @@ class Dealer implements DealerContract
     /**
      * @var array
      */
-    public $cards;
+    protected $cards;
 
     /**
      * Dealer constructor.
