@@ -8,7 +8,7 @@
             <div class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
                 <p>Remaining Cards: {{ remaining }}</p>
                 <br>
-                <button class="bg-blue hover:bg-blue-dark text-white py-1 px-2 rounded" @click="dealOne">Deal One</button>
+                <button class="bg-blue hover:bg-blue-dark text-white py-1 px-2 rounded" v-if="remaining > 0" @click="dealOne">Deal One</button>
                 <button class="bg-red hover:bg-red-dark text-white py-1 px-2 rounded" @click="startOver">Start Over</button>
             </div>
             <div class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter" v-for="card in cards">
@@ -44,6 +44,9 @@
                             this.currentCard = response.data.card;
                             this.cards.unshift(response.data.card);
                             this.remaining = response.data.remaining;
+                            if (this.remaining < 1) {
+                                alert('Game Over!');
+                            }
                         }
                     })
             },

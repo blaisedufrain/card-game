@@ -1814,6 +1814,10 @@ __webpack_require__.r(__webpack_exports__);
           _this2.cards.unshift(response.data.card);
 
           _this2.remaining = response.data.remaining;
+
+          if (_this2.remaining < 1) {
+            alert('Game Over!');
+          }
         }
       });
     },
@@ -36716,15 +36720,17 @@ var render = function() {
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass:
-                  "bg-blue hover:bg-blue-dark text-white py-1 px-2 rounded",
-                on: { click: _vm.dealOne }
-              },
-              [_vm._v("Deal One")]
-            ),
+            _vm.remaining > 0
+              ? _c(
+                  "button",
+                  {
+                    staticClass:
+                      "bg-blue hover:bg-blue-dark text-white py-1 px-2 rounded",
+                    on: { click: _vm.dealOne }
+                  },
+                  [_vm._v("Deal One")]
+                )
+              : _vm._e(),
             _vm._v(" "),
             _c(
               "button",
