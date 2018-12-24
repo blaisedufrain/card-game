@@ -9,7 +9,9 @@ The Dealer.php file contains the two methods you have requested in the original 
 I wanted to keep this code separate from any framework as it should really work in any php project, not just this one.  
 I would have created a separate package for this and required it as a dependency for the project, but I left them together to keep you from having to jump between repos.
 
-I wanted to give you an actual interface to interact with the tool, so I created a simple app using [Laravel](https://laravel.com/ "Laravel Homepage") and [Vue.js](https://vuejs.org/). 
+I wanted to give you an actual interface to interact with the tool, so I created a simple app using [Laravel](https://laravel.com/ "Laravel Homepage") and [Vue.js](https://vuejs.org/).
+
+ 
 
 ### Deployment
 
@@ -37,9 +39,20 @@ Run `docker-compose up -d`
 *If you have any port collisions, please adjust the ports as necessary in the docker-compose.yml in the project root.
 
 Run `docker-compose exec app composer install`
-Run `docker-compose exec app  docker-compose exec app php artisan key:generate`
+Run `docker-compose exec app php artisan key:generate`
 
 Confirm the application is working by going to http://127.0.0.1:809
+
+
+### Tests
+
+Unit tests are located within the ./core/tests/ directory. The suite can be run from the project root with the following command. 
+
+`./vendor/bin/phpunit`
+
+or if you are using docker
+
+`docker-compose exec app ./vendor/bin/phpunit` 
 
 
 ### Extensibility
@@ -56,17 +69,4 @@ Additional shuffling algorithms can be added to the Shufflers directory.
 I implemented a "CutTheDeck" shuffler solely for demonstration.  To use this or another shuffler, add a variable to your .env as follows:
 
 CARD_SHUFFLER=CutTheDeck
-
-### Tests
-
-Unit tests are located within the ./core/tests/ directory. The suite can be run from the project root with the following command. 
-
-`./vendor/bin/phpunit`
-
-or if you are using docker
-
-`docker-compose exec app ./vendor/bin/phpunit` 
-
-
-
 
