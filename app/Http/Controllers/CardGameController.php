@@ -44,7 +44,7 @@ class CardGameController extends Controller
         $this->swapDeckFromSession();
 
         return response()->json([
-            'remaining' => count($this->dealer->getAllCards())
+            'remaining' => count($this->dealer->getAllCards()),
         ]);
     }
 
@@ -62,7 +62,7 @@ class CardGameController extends Controller
 
         return response()->json([
             'card' => $card instanceof Card ? $card->display() : $card,
-            'remaining' => count($this->dealer->getAllCards())
+            'remaining' => count($this->dealer->getAllCards()),
         ]);
     }
 

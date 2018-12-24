@@ -18,6 +18,7 @@ class Card
 
     /**
      * Card constructor.
+     *
      * @param string $suit
      * @param $value
      * @param string|null $name
@@ -42,6 +43,6 @@ class Card
      */
     public function getName(): string
     {
-        return (string) (is_null($this->name) ? $this->value : $this->name);
+        return (string)(is_null($this->name) ? $this->value : $this->name);
     }
 }

@@ -16,7 +16,7 @@ class DefaultShuffler implements ShufflerContract
     {
         // Need to make sure we have default keys
         $items = array_values($items);
-        for ($i = count($items) - 1 ; $i >= 0; $i--) {
+        for ($i = count($items) - 1; $i >= 0; $i--) {
             $random = rand(0, $i);
             $tmp = $items[$random];
             $items[$random] = $items[$i];

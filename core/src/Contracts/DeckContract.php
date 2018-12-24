@@ -6,6 +6,7 @@ interface DeckContract
 {
     /**
      * Get all items in the deck.
+     *
      * @return array
      */
     public function getCards(): array;
@@ -17,6 +18,7 @@ interface DeckContract
 
     /**
      * Get the list of suits in this type of card deck
+     *
      * @return array
      */
     public static function getSuits(): array;
